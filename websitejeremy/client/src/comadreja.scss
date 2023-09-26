@@ -1,0 +1,13 @@
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+.custom-focus {
+  &:focus {
+    outline-color: #7777; /* Replace with your desired hexadecimal color value */
+  }
+} 
+
+.comadreja {
+  box-shadow: 0 0 5px rgba($red, 0.5);
+  @extend .shadow;
+   /* Change the color here */
+}

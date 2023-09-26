@@ -1,0 +1,40 @@
+import React, { useState } from 'react';
+
+function MyComponent({ items }) {
+  return (
+    <div className="container shadow">
+      <div className="row">
+        {items.map((item, index) => (
+          <div className="col-4" key={index}>
+            <div className="accordion" id={`accordion-${index}`}>
+              <div className="accordion-item">
+                <h2 className="accordion-header" id={`heading-${index}`}>
+                  <button
+                    className="accordion-button collapsed"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls={`collapse-${index}`}
+                    data-bs-toggle="collapse"
+                    data-bs-target={`#collapse-${index}`}
+                  >
+                    {item.name}
+                  </button>
+                </h2>
+                <div
+                  id={`collapse-${index}`}
+                  className="accordion-collapse collapse"
+                  aria-labelledby={`heading-${index}`}
+                  data-bs-parent={`#accordion-${index}`}
+                >
+                  <div className="accordion-body">{item.description}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default MyComponent;
